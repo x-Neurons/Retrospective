@@ -1,15 +1,15 @@
 import { Button, Icon } from '@mui/material';
 import './App.css';
+import BrainStorm from './Components/BrainStorm';
+import Group from './Components/Group';
 
 function App() {
+  const currentPath = window.location.pathname; // Get the current path
+
   return (
-    <div className='flex flex-col justify-center items-center gap-5'>
-      <h1 className="text-3xl font-bold underline text-green-400 mt-5">
-        Hello world!
-      </h1>
-      <Button variant="contained" color='success'>Get Started</Button>
-      <Icon>star</Icon>
-    </div>
+    <>
+      {currentPath === '/group' ? <Group /> : <BrainStorm />}
+    </>
   );
 }
 
